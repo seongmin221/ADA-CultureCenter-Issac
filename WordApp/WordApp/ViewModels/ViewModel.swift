@@ -10,13 +10,9 @@ import Foundation
 class ViewModel: ObservableObject {
     
     @Published var words: [String] = []
-    
-//    @Published var numberOfWords: Int = 0
+    @Published var numberOfWords: Int = 0
     
     func fetchNumber(_ number: Int) {
-        
-//        let config = URLSessionConfiguration.default
-//        let session = URLSession(configuration: config)
         
         guard var urlComp = URLComponents(string: "https://random-word-api.herokuapp.com/word?") else { return }
         let urlNumberQuery = [URLQueryItem(name: "number", value: "\(number)")]
